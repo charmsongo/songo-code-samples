@@ -8,6 +8,6 @@ package com.songo.myjvm;
 public class EmptyObject {
     public static void main(String[] args) {
         EmptyObject emptyObject = new EmptyObject();
-        System.out.println(ClassLayout.p);
+        System.out.println("1111");
     }
 }
