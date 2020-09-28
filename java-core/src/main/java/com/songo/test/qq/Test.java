@@ -1,4 +1,4 @@
-package com.songo.test;
+package com.songo.test.qq;
 
 /**
  * @Author SonGo
