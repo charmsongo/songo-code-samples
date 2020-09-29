@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="java-core" />
+        <module name="strategydemo2" />
         <module name="myjvm" />
+        <module name="strategydemo" />
+        <module name="java-core" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +19,8 @@
       <module name="java-core" options="-parameters" />
       <module name="myjvm" options="-parameters" />
       <module name="songo-code-samples" options="" />
+      <module name="strategydemo" options="-parameters" />
+      <module name="strategydemo2" options="-parameters" />
     </option>
   </component>
 </project>

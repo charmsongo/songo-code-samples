@@ -6,4 +6,6 @@ package com.songo;
  * @Description
  */
 public class Son extends Parent{
+    public Son() {
+    }
 }

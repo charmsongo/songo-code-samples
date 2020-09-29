@@ -1,13 +1,20 @@
 package com.songo;
 
+import java.io.Serializable;
+
 /**
  * Created By GS 11:15 2020/4/11
  */
-public class Person {
+public class Person implements Serializable {
 
+    private static final long serialVersionUID = -4824231695984697752L;
     private String id;
     private String name;
 
+    public Person(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public String getId() {
         return id;

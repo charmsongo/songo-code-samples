@@ -1,6 +1,8 @@
 package com.songo;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.LongAdder;
 
@@ -14,6 +16,11 @@ public class HashMapTest {
         hashMap.remove(1);
         System.out.println(System.identityHashCode("a"));
         System.out.println("a".hashCode());
+        Iterator<Map.Entry<Object, Object>> iterator = hashMap.entrySet().iterator();
+        if (iterator.hasNext()) {
+            Map.Entry<Object, Object> next = iterator.next();
+
+        }
 
 
         ConcurrentHashMap<Object, Object> concurrentHashMap = new ConcurrentHashMap<>();
