@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * @Author SonGo
  * @Create 2020/8/6 17:28
- * @Description
+ * @Description 策略+工厂
  */
 //@Component
 public class AnimalContext {
