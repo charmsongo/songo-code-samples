@@ -1,4 +1,4 @@
-package cn.songo.strategydemo.impl;
+package cn.songo.strategydemo.service;
 
 /**
  * @Author SonGo

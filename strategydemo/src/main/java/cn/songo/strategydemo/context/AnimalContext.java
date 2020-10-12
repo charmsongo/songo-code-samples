@@ -1,8 +1,8 @@
 package cn.songo.strategydemo.context;
 
-import cn.songo.strategydemo.impl.Animal;
-import cn.songo.strategydemo.impl.Cat;
-import cn.songo.strategydemo.impl.Dog;
+import cn.songo.strategydemo.service.Animal;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
 import java.util.HashMap;
@@ -16,37 +16,44 @@ import java.util.Map;
 //@Component
 public class AnimalContext {
 
+    private static final Logger logger = LoggerFactory.getLogger(AnimalContext.class);
     private static Map<String, Animal> animalMap = new HashMap<String, Animal>();
 
     private Animal animal;
-    //private ApplicationContext applicationContext;
 
     public AnimalContext(String type) {
-        if (animalMap.size() == 0) {
-            initMap();
-        }
 
+        //此处判空，可以抛异常
         if (StringUtils.isEmpty(type) || !animalMap.containsKey(type)) {
             System.out.println("type is error.");
+            return;
         }
-
         animal = animalMap.get(type);
     }
 
+    /**
+     * 策略 eat 方法
+     * @param str
+     */
     public void eat(String str) {
         animal.eat(str);
     }
 
+    /**
+     * 策略 run 方法
+     * @param string
+     */
     public void run(String string) {
         animal.run(string);
     }
 
+    /**
+     * 策略注册方法
+     * @param type
+     * @param animal
+     */
     public static void registerService(String type, Animal animal) {
         animalMap.put(type, animal);
     }
 
-    private void initMap() {
-        animalMap.put(AnimalEnum.CAT.getCode(), new Cat());
-        animalMap.put(AnimalEnum.DOG.getCode(), new Dog());
-    }
 }
