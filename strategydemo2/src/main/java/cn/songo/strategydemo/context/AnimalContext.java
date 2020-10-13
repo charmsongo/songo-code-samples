@@ -16,7 +16,6 @@ import java.util.Map;
  * @Create 2020/8/6 17:28
  * @Description 策略+工厂 (带 animalMap 自初始化注册 bean 版本)
  */
-//@Component
 public class AnimalContext {
 
     private static final Logger logger = LoggerFactory.getLogger(AnimalContext.class);
@@ -30,7 +29,7 @@ public class AnimalContext {
         AnimalContext.applicationContext = applicationContext;
     }
 
-    public AnimalContext(String type) {
+    public AnimalContext(String type) throws Exception {
         //正常启动 spring 容器，这里应该不会进行初始化，此处为了便于理解代码含义
         if (animalMap.size() == 0) {
             initMap();
@@ -38,7 +37,8 @@ public class AnimalContext {
         }
 
         if (StringUtils.isEmpty(type) || !animalMap.containsKey(type)) {
-            System.out.println("type is error.");
+            logger.error("type is error.");
+            throw new Exception("type is error.");
         }
 
         animal = animalMap.get(type);
