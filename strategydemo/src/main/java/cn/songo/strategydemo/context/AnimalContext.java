@@ -13,7 +13,6 @@ import java.util.Map;
  * @Create 2020/8/6 17:28
  * @Description 策略+工厂
  */
-//@Component
 public class AnimalContext {
 
     private static final Logger logger = LoggerFactory.getLogger(AnimalContext.class);
@@ -21,12 +20,12 @@ public class AnimalContext {
 
     private Animal animal;
 
-    public AnimalContext(String type) {
+    public AnimalContext(String type) throws Exception {
 
-        //此处判空，可以抛异常
+        //此处判空，没有可以抛异常
         if (StringUtils.isEmpty(type) || !animalMap.containsKey(type)) {
-            System.out.println("type is error.");
-            return;
+            logger.error("type is error.");
+            throw new Exception("type is error.");
         }
         animal = animalMap.get(type);
     }
