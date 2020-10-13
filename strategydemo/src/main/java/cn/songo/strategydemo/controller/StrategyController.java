@@ -19,8 +19,12 @@ public class StrategyController {
      */
     @GetMapping("/hello")
     public void hello(AnimalRequest animalRequest) {
-        AnimalContext animalContext = new AnimalContext(animalRequest.getCode());
-        animalContext.eat("哈哈");
-        animalContext.run("喜喜");
+        try {
+            AnimalContext animalContext  = new AnimalContext(animalRequest.getCode());
+            animalContext.eat("哈哈");
+            animalContext.run("喜喜");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
