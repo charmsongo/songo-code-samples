@@ -47,7 +47,7 @@ public class Testreflect {
 
 
         SingletonEnum instance1 = SingletonEnum.INSTANCE;
-        SingletonEnum newInstance1 = (SingletonEnum) constructor1.newInstance();//异常 Cannot reflectively create enum objects
+        SingletonEnum newInstance1 = (SingletonEnum) constructor1.newInstance("111",222);//异常 Cannot reflectively create enum objects
 
         System.out.println(instance1);
         System.out.println(newInstance1);
