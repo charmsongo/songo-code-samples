@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 /**
  * @Author SonGo
  * @Create 2020/10/14 10:14
- * @Description 单例是否会通过反射得到对象的内容，枚举完胜
+ * @Description 单例是否会通过反射得到对象的内容，安全性枚举完胜
  */
 public class Testreflect {
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {

@@ -8,7 +8,7 @@ import java.io.*;
 /**
  * @Author SonGo
  * @Create 2020/10/14 9:25
- * @Description 通过序列化和反序列化 测试 单例的对象是否会改变，枚举完胜
+ * @Description 通过序列化和反序列化 测试 单例的对象是否会改变，单例性枚举完胜
  */
 public class TestSerializable {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
