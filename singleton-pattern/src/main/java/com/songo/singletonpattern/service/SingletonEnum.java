@@ -6,8 +6,14 @@ package com.songo.singletonpattern.service;
  * @Description 枚举单例模式
  */
 public enum SingletonEnum {
+    /**
+     * 实例
+     */
     INSTANCE;
 
+    /**
+     * 方法
+     */
     public void doSomething() {
         System.out.println("doSomething");
     }
