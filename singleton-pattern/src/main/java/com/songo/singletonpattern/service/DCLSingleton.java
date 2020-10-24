@@ -11,28 +11,29 @@ import java.io.Serializable;
  * 2、实例化的变量引用私有化；
  * 3、获取实例的方法共有。
  */
-public class SingletonPattern1 implements Serializable {
+public class DCLSingleton implements Serializable {
 
     private static final long serialVersionUID = 6242241249985894658L;
     /**
-     * volatile 作用：内存中可见 和 防止指令重排，这里主要是指令重排
+     * volatile 作用：内存中可见 和 防止指令重排
+     * 这里主要作用是防止指令重排
      */
-    private volatile static SingletonPattern1 instance;
+    private volatile static DCLSingleton instance;
 
-    private SingletonPattern1() {
+    private DCLSingleton() {
     }
 
-    public static SingletonPattern1 getInstance() {
+    public static DCLSingleton getInstance() {
         if (instance == null) {
-            synchronized (SingletonPattern1.class) {
+            synchronized (DCLSingleton.class) {
                 if (instance == null) {
-                    instance = new SingletonPattern1();
+                    instance = new DCLSingleton();
                 }
             }
         }
         return instance;
     }
-    public void SingletonFunction() {
-        System.out.println("SingletonPattern1 test.");
+    public void singletonFunction() {
+        System.out.println("DCLSingleton test.");
     }
 }

@@ -14,7 +14,7 @@ public enum SingletonEnum {
     /**
      * 方法
      */
-    public void doSomething() {
-        System.out.println("doSomething");
+    public void singletonFunction() {
+        System.out.println("SingletonEnum test.");
     }
 }
